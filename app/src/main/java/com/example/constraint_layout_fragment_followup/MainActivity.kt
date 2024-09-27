@@ -28,48 +28,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        if (savedInstanceState == null){
-            supportFragmentManager.commit {
-                setCustomAnimations(
-                    R.anim.slide_in, // enter
-                    R.anim.fade_out, // exit
-                    R.anim.fade_in, // popEnter
-                    R.anim.slide_out // popExit
-                )
-                setReorderingAllowed(true)
-                add<First>(R.id.fragmentContainerView)
 
-            }
-        }
 
-        mainActivityBinding.Nextbutton.setOnClickListener{
-            index++
-            if (index == 10) index = 1
-            changeFragment()
-        }
 
-        mainActivityBinding.prevButton.setOnClickListener{
-            index --
-            if (index == 0) index = 9
 
-            changeFragment()
-        }
+
     }
 
-    private fun changeFragment(){
-        supportFragmentManager.commit {
-            when (index){
-                1 -> replace<First>(R.id.fragmentContainerView)
-                2 -> replace<Second>(R.id.fragmentContainerView)
-                3 -> replace<Third>(R.id.fragmentContainerView)
-                4 -> replace<Fourth>(R.id.fragmentContainerView)
-                5 -> replace<Fifth>(R.id.fragmentContainerView)
-                6 -> replace<Sixth>(R.id.fragmentContainerView)
-                7 -> replace<Seventh>(R.id.fragmentContainerView)
-                8 -> replace<Eight>(R.id.fragmentContainerView)
-                9 -> replace<Last>(R.id.fragmentContainerView)
-                else -> replace<First>(R.id.fragmentContainerView)
-            }
-        }
-    }
+
 }

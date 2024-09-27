@@ -9,52 +9,16 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.constraint_layout_fragment_followup.First"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_graph"
         tools:layout="@layout/fragment_first" />
-
-
-    <android.widget.Button
-        android:id="@+id/Nextbutton"
-        android:textColor="@color/white"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="@string/next_button_text"
-        android:background="@drawable/success_button"
-        android:backgroundTint="#0F2FA1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/prevButton" />
-
-    <android.widget.Button
-        android:id="@+id/prevButton"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/prev_button_text"
-        android:background="@drawable/success_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="200dp" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="guideline4"
-        app:barrierDirection="left" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
