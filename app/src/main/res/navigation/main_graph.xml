@@ -1,80 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/first2">
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.constraint_layout_fragment_followup.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
     <fragment
-        android:id="@+id/eight"
-        android:name="com.example.constraint_layout_fragment_followup.Eight"
-        android:label="fragment_eight"
-        tools:layout="@layout/fragment_eight" >
-        <action
-            android:id="@+id/action_eight_to_last"
-            app:destination="@id/last"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/seventh"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/first"
+        android:id="@+id/first2"
         android:name="com.example.constraint_layout_fragment_followup.First"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
-            android:id="@+id/action_first_to_second"
+            android:id="@+id/action_first2_to_second"
             app:destination="@id/second"
-            app:popUpTo="@id/last" />
-    </fragment>
-    <fragment
-        android:id="@+id/fifth"
-        android:name="com.example.constraint_layout_fragment_followup.Fifth"
-        android:label="fragment_fifth"
-        tools:layout="@layout/fragment_fifth" >
-        <action
-            android:id="@+id/action_fifth_to_sixth"
-            app:destination="@id/sixth"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/fourth"
+            app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/fourth"
-        android:name="com.example.constraint_layout_fragment_followup.Fourth"
-        android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" >
+            app:popExitAnim="@anim/slide_out" />
         <action
-            android:id="@+id/action_fourth_to_fifth"
-            app:destination="@id/fifth"
+            android:id="@+id/action_first2_to_last"
+            app:destination="@id/last"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/third"
+            app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/last"
-        android:name="com.example.constraint_layout_fragment_followup.Last"
-        android:label="fragment_last"
-        tools:layout="@layout/fragment_last" >
-        <action
-            android:id="@+id/action_last_to_first"
-            app:destination="@id/first"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/eight"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="" />
     </fragment>
     <fragment
         android:id="@+id/second"
@@ -84,35 +37,20 @@
         <action
             android:id="@+id/action_second_to_third"
             app:destination="@id/third"
-            app:popUpTo="@id/first" />
-    </fragment>
-    <fragment
-        android:id="@+id/seventh"
-        android:name="com.example.constraint_layout_fragment_followup.Seventh"
-        android:label="fragment_seventh"
-        tools:layout="@layout/fragment_seventh" >
-        <action
-            android:id="@+id/action_seventh_to_eight"
-            app:destination="@id/eight"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/sixth"
+            app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/sixth"
-        android:name="com.example.constraint_layout_fragment_followup.Sixth"
-        android:label="fragment_sixth"
-        tools:layout="@layout/fragment_sixth" >
+            app:popExitAnim="@anim/slide_out" />
         <action
-            android:id="@+id/action_sixth_to_seventh"
-            app:destination="@id/seventh"
+            android:id="@+id/action_second_to_first2"
+            app:destination="@id/first2"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/fifth"
+            app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/third"
@@ -123,9 +61,156 @@
             android:id="@+id/action_third_to_fourth"
             app:destination="@id/fourth"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popUpTo="@id/second"
+            app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/fade_out" />
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_third_to_second"
+            app:destination="@id/second"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourth"
+        android:name="com.example.constraint_layout_fragment_followup.Fourth"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourth_to_fifth"
+            app:destination="@id/fifth"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_fourth_to_third"
+            app:destination="@id/third"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifth"
+        android:name="com.example.constraint_layout_fragment_followup.Fifth"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifth_to_sixth"
+            app:destination="@id/sixth"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_fifth_to_fourth"
+            app:destination="@id/fourth"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixth"
+        android:name="com.example.constraint_layout_fragment_followup.Sixth"
+        android:label="fragment_sixth"
+        tools:layout="@layout/fragment_sixth" >
+        <action
+            android:id="@+id/action_sixth_to_seventh"
+            app:destination="@id/seventh"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_sixth_to_fifth"
+            app:destination="@id/fifth"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/seventh"
+        android:name="com.example.constraint_layout_fragment_followup.Seventh"
+        android:label="fragment_seventh"
+        tools:layout="@layout/fragment_seventh" >
+        <action
+            android:id="@+id/action_seventh_to_eight"
+            app:destination="@id/eight"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_seventh_to_sixth"
+            app:destination="@id/sixth"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/eight"
+        android:name="com.example.constraint_layout_fragment_followup.Eight"
+        android:label="fragment_eight"
+        tools:layout="@layout/fragment_eight" >
+        <action
+            android:id="@+id/action_eight_to_last"
+            app:destination="@id/last"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_eight_to_seventh"
+            app:destination="@id/seventh"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/last"
+        android:name="com.example.constraint_layout_fragment_followup.Last"
+        android:label="fragment_last"
+        tools:layout="@layout/fragment_last" >
+        <action
+            android:id="@+id/action_last_to_eight"
+            app:destination="@id/eight"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_last_to_first2"
+            app:destination="@id/first2"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="message"
+            app:argType="string" />
     </fragment>
 </navigation>
